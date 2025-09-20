@@ -20,7 +20,7 @@ def login_details():
     if not user or  not check_password_hash(user.password ,password):
         return redirect('/login')
     login_user(user, remember=remember)
-    print(email, password)
+    
 
     
     return redirect(url_for('main.logger'))
