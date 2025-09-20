@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+{% block content %}
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <a class="navbar-brand" href="#">update workouts</a>
+<div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/profile">Account</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <!-- <div class="mb-3">
+    </div>
+    <div class="container text-center mt-5">
+        <div class="mt-4">
+            <a href="/new" class="btn btn-primary me-2">Add workout</a> 
+        </div>
+    </div> -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Add Workout</h2>
+        
+        <form action='{{ url_for("main.update_workouts", workout_id=workout.id ) }}' method="post">
+            <div class="mb-3">
+                <label for="count" class="form-label">Number of Inputs</label>
+                <input type="number" class="form-control" name="count" id="count" placeholder="Enter number of sets/reps" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="workout" class="form-label">Workout</label>
+                <input type="text" class="form-control" name="about" id="workout" placeholder="Enter workout name" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" name="description" id="description" rows="4" placeholder="Describe your workout" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </form>
+    </div>
+{% endblock %}
