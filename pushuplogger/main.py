@@ -35,8 +35,6 @@ def workoutdetails():
     workout = Workout(count=count, works=about, description=description, author=current_user)
     db.session.add(workout)
     db.session.commit()
-
-    
     
     return redirect('/logger')
 
